@@ -17,13 +17,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
 
       - name: Install and Build Frontend 🔧
+        working-directory: ./frontend
         env:
           NODE_OPTIONS: --openssl-legacy-provider
         run: |
-          cd frontend
           npm install
           npm run build
         
@@ -32,3 +31,4 @@ jobs:
         with:
           folder: frontend/dist
           branch: gh-pages
+          clean: true
