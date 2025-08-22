@@ -3,20 +3,20 @@ import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
-    <div className='flex flex-col sm:flex-row border border-gray-400 bg-[#f8f9f5] dark:bg-gray-800 dark:border-gray-700'>
+    <div className='flex flex-col sm:flex-row border border-gray-400 bg-[#f8f9f5]'>
       {/* Hero Left Side */}
       <div className='w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0'>
-            <div className='text-[#414141] dark:text-gray-200 px-6'>
+            <div className='text-[#414141] px-6'>
                 <div className='flex items-center gap-2'>
                     <p className='w-8 md:w-11 h-[2px] bg-green-600'></p>
                     <p className='font-medium text-sm md:text-base text-green-700 dark:text-green-500'>ECO-FRIENDLY PRODUCTS</p>
                 </div>
-                <h1 className='prata-regular text-3xl sm:py-3 lg:text-5xl leading-relaxed'>Sustainable Living <br/> <span className='text-green-700 dark:text-green-500'>For A Better Planet</span></h1>
-                <p className='text-sm mb-4 max-w-md dark:text-gray-300'>Discover our collection of sustainable, eco-friendly products that help reduce environmental impact while enhancing your everyday life.</p>
+                <h1 className='prata-regular text-3xl sm:py-3 lg:text-5xl leading-relaxed'>Sustainable Living <br/> <span className='text-green-700'>For A Better Planet</span></h1>
+                <p className='text-sm mb-4 max-w-md'>Discover our collection of sustainable, eco-friendly products that help reduce environmental impact while enhancing your everyday life.</p>
                 <Link to='/collection'>
                   <div className='flex items-center gap-2 group'>
-                      <p className='font-semibold text-sm md:text-base group-hover:text-green-700 dark:group-hover:text-green-500 transition-colors'>SHOP NOW</p>
-                      <p className='w-8 md:w-11 h-[1px] bg-[#414141] group-hover:bg-green-700 dark:bg-gray-400 dark:group-hover:bg-green-500 transition-colors'></p>
+                      <p className='font-semibold text-sm md:text-base group-hover:text-green-700 transition-colors'>SHOP NOW</p>
+                      <p className='w-8 md:w-11 h-[1px] bg-[#414141] group-hover:bg-green-700 transition-colors'></p>
                   </div>
                 </Link>
             </div>

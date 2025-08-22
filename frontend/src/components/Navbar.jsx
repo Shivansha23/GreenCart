@@ -23,11 +23,11 @@ const Navbar = () => {
     }
 
   return (
-    <div className='flex items-center justify-between py-5 font-medium bg-white dark:bg-gray-900 transition-colors duration-200'>
+    <div className='flex items-center justify-between py-5 font-medium bg-white transition-colors duration-200'>
       
     <Link to='/'><img src={assets.logo} className='w-36' alt="" /><span className="text-green-600 text-xs font-semibold ml-1">GREENCART</span></Link>
 
-      <ul className='hidden sm:flex gap-5 text-sm text-gray-700 dark:text-gray-300'>
+      <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
         
         <NavLink to='/' className='flex flex-col items-center gap-1'>
             <p>HOME</p>
@@ -44,7 +44,7 @@ const Navbar = () => {
             </div>
             
             <div className={`absolute dropdown-menu left-0 pt-4 z-10 ${categoryDropdown ? 'block' : 'hidden'} group-hover:block`}>
-                <div className='flex flex-col gap-2 w-48 py-3 px-5 bg-white dark:bg-gray-800 shadow-lg text-gray-500 dark:text-gray-300 rounded'>
+                <div className='flex flex-col gap-2 w-48 py-3 px-5 bg-white shadow-lg text-gray-500 rounded'>
                     <p onClick={() => navigateToCategory('all')} className='cursor-pointer hover:text-green-600 hover:font-medium'>All Products</p>
                     <p onClick={() => navigateToCategory('Women')} className='cursor-pointer hover:text-green-600 hover:font-medium'>Sustainable Clothing</p>
                     <p onClick={() => navigateToCategory('Daily Use')} className='cursor-pointer hover:text-green-600 hover:font-medium'>Daily Use Products</p>
@@ -74,7 +74,7 @@ const Navbar = () => {
                 {/* Dropdown Menu */}
                 {token && 
                 <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4 z-10'>
-                    <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-white dark:bg-gray-800 shadow-lg text-gray-500 dark:text-gray-300 rounded'>
+                    <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-white shadow-lg text-gray-500 rounded'>
                         <p className='cursor-pointer hover:text-green-600 hover:font-medium'>My Profile</p>
                         <p onClick={()=>navigate('/orders')} className='cursor-pointer hover:text-green-600 hover:font-medium'>Orders</p>
                         <p onClick={logout} className='cursor-pointer hover:text-green-600 hover:font-medium'>Logout</p>
@@ -89,15 +89,15 @@ const Navbar = () => {
       </div>
 
         {/* Sidebar menu for small screens */}
-        <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white dark:bg-gray-900 transition-all z-20 ${visible ? 'w-full' : 'w-0'}`}>
-                <div className='flex flex-col text-gray-600 dark:text-gray-300'>
+        <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all z-20 ${visible ? 'w-full' : 'w-0'}`}>
+                <div className='flex flex-col text-gray-600'>
                     <div onClick={()=>setVisible(false)} className='flex items-center gap-4 p-3 cursor-pointer'>
-                        <img className='h-4 rotate-180 dark:invert' src={assets.dropdown_icon} alt="" />
+                        <img className='h-4 rotate-180' src={assets.dropdown_icon} alt="" />
                         <p>Back</p>
                     </div>
-                    <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border dark:border-gray-700' to='/'>HOME</NavLink>
-                    <div className='py-2 pl-6 border dark:border-gray-700'>
-                        <p className='font-medium text-green-600 dark:text-green-500'>SHOP BY CATEGORY</p>
+                    <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/'>HOME</NavLink>
+                    <div className='py-2 pl-6 border'>
+                        <p className='font-medium text-green-600'>SHOP BY CATEGORY</p>
                         <div className='pl-4 mt-2 flex flex-col gap-2'>
                             <p onClick={() => {navigateToCategory('all'); setVisible(false);}} className='cursor-pointer'>All Products</p>
                             <p onClick={() => {navigateToCategory('Women'); setVisible(false);}} className='cursor-pointer'>Sustainable Clothing</p>
@@ -106,8 +106,8 @@ const Navbar = () => {
                             <p onClick={() => {navigateToCategory('Bags'); setVisible(false);}} className='cursor-pointer'>Eco-Friendly Bags</p>
                         </div>
                     </div>
-                    <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border dark:border-gray-700' to='/about'>ABOUT</NavLink>
-                    <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border dark:border-gray-700' to='/contact'>CONTACT</NavLink>
+                    <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/about'>ABOUT</NavLink>
+                    <NavLink onClick={()=>setVisible(false)} className='py-2 pl-6 border' to='/contact'>CONTACT</NavLink>
                 </div>
         </div>
 
