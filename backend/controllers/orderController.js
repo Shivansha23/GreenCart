@@ -8,12 +8,23 @@ const currency = 'inr'
 const deliveryCharge = 10
 
 // gateway initialize
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
+let stripe;
+let razorpayInstance;
 
-const razorpayInstance = new razorpay({
-    key_id : process.env.RAZORPAY_KEY_ID,
-    key_secret : process.env.RAZORPAY_KEY_SECRET,
-})
+try {
+    if (process.env.STRIPE_SECRET_KEY) {
+        stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+    }
+    
+    if (process.env.RAZORPAY_KEY_ID && process.env.RAZORPAY_KEY_SECRET) {
+        razorpayInstance = new razorpay({
+            key_id: process.env.RAZORPAY_KEY_ID,
+            key_secret: process.env.RAZORPAY_KEY_SECRET,
+        });
+    }
+} catch (error) {
+    console.log("Payment gateway initialization error:", error);
+}
 
 // Placing orders using COD Method
 const placeOrder = async (req,res) => {
