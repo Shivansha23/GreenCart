@@ -73,9 +73,9 @@ const Navbar = () => {
                 <img onClick={()=> token ? null : navigate('/login') } className='w-5 cursor-pointer dark:invert' src={assets.profile_icon} alt="" />
                 {/* Dropdown Menu */}
                 {token && 
-                <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4 z-10'>
-                    <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-white shadow-lg text-gray-500 rounded'>
-                        <p className='cursor-pointer hover:text-green-600 hover:font-medium'>My Profile</p>
+                <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4 z-50'>
+                    <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-white shadow-xl text-gray-500 rounded border border-gray-100'>
+                        <p onClick={()=>navigate('/profile')} className='cursor-pointer hover:text-green-600 hover:font-medium'>My Profile</p>
                         <p onClick={()=>navigate('/orders')} className='cursor-pointer hover:text-green-600 hover:font-medium'>Orders</p>
                         <p onClick={logout} className='cursor-pointer hover:text-green-600 hover:font-medium'>Logout</p>
                     </div>
