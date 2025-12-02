@@ -38,7 +38,7 @@ const Navbar = () => {
             <div className='flex flex-col items-center gap-1 cursor-pointer' onClick={() => setCategoryDropdown(!categoryDropdown)}>
                 <div className='flex items-center'>
                     <p>SHOP</p>
-                    <img src={assets.dropdown_icon} className='w-3 ml-1 dark:invert' alt="" />
+                    <img src={assets.dropdown_icon} className='w-2 ml-1 dark:invert' alt="" />
                 </div>
                 <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 dark:bg-gray-300 hidden' />
             </div>
