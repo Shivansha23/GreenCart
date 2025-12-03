@@ -140,7 +140,7 @@ const Hero = () => {
       </motion.div>
       {/* Hero Right Side */}
       <motion.div 
-        className='w-full sm:w-1/2 overflow-hidden relative z-10'
+        className='w-full sm:w-1/2 overflow-hidden relative z-9'
         variants={fadeIn}
       >
         <motion.img 
